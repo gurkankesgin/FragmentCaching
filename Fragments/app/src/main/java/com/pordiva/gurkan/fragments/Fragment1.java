@@ -19,6 +19,7 @@ public class Fragment1 extends Fragment {
         /**
          *      scrollview de state i korumak için id tanımlamak gerekiyor.
          *      android:id="@+id/scrollView"
+         *      appbar ın yok olması için nestedscrollview olmalı
          */
 
         return inflater.inflate(R.layout.fragment1, container, false);

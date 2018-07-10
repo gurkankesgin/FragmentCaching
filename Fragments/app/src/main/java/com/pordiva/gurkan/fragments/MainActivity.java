@@ -4,8 +4,8 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 public class MainActivity  extends AppCompatActivity {
 
@@ -16,33 +16,33 @@ public class MainActivity  extends AppCompatActivity {
 
         addOrReplaceFragment(new Fragment1());
 
-        findViewById(R.id.buton1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                addOrReplaceFragment(new Fragment1());
+        ((TabLayout)findViewById(R.id.tabs)).setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+
+                if (position == 0) {
+                    addOrReplaceFragment(new Fragment1());
+                }
+                if (position == 1) {
+                    addOrReplaceFragment(new Fragment2());
+                }
+                if (position == 2) {
+                    addOrReplaceFragment(new Fragment3());
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
-
-        findViewById(R.id.buton2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                addOrReplaceFragment(new Fragment2());
-
-
-            }
-        });
-        findViewById(R.id.buton3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                addOrReplaceFragment(new Fragment3());
-            }
-        });
-
-
 
     }
 
