@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity  extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class MainActivity  extends AppCompatActivity {
         addOrReplaceFragment(new Fragment1());
 
 
-        ((TabLayout)findViewById(R.id.tabs)).setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        ((TabLayout) findViewById(R.id.tabs)).setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
@@ -28,9 +28,7 @@ public class MainActivity  extends AppCompatActivity {
                 if (position == 1) {
                     addOrReplaceFragment(new Fragment2());
                 }
-                if (position == 2) {
-                    addOrReplaceFragment(new Fragment3());
-                }
+
             }
 
             @Override
@@ -46,15 +44,16 @@ public class MainActivity  extends AppCompatActivity {
 
     }
 
-    private void addOrReplaceFragment(Fragment fragment) {
+    private void addOrReplaceFragment(Fragment currentFragment) {
 
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        Fragment newFragment = manager.findFragmentByTag(fragment.getClass().getName());
+        Fragment newFragment = manager.findFragmentByTag(currentFragment.getClass().getName());
 
 
         if (newFragment == null) {
-            transaction.add(R.id.fragments, fragment, fragment.getClass().getName());
+
+            transaction.replace(R.id.fragments, currentFragment, currentFragment.getClass().getName());
         } else {
             transaction.replace(R.id.fragments, newFragment);
         }
@@ -62,5 +61,7 @@ public class MainActivity  extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
 
 }

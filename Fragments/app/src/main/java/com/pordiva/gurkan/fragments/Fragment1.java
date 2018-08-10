@@ -2,7 +2,6 @@ package com.pordiva.gurkan.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,8 @@ import android.view.ViewGroup;
  * Created by gurkan on 2.12.2015.
  */
 public class Fragment1 extends Fragment {
+
+    private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,25 +23,12 @@ public class Fragment1 extends Fragment {
          *      appbar ın yok olması için nestedscrollview olmalı
          */
 
-        return inflater.inflate(R.layout.fragment1, container, false);
+        if (view == null)
+            view = inflater.inflate(R.layout.fragment1, container, false);
+
+
+        return view;
     }
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.d("logwp","resume");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.d("logwp","pause");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Log.d("logwp","destroy");
-    }
 }
