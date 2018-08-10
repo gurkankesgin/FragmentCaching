@@ -14,20 +14,17 @@ import com.pordiva.gurkan.fragments.R;
 public class FragmentScrollView extends Fragment {
 
     private View view;
+    private boolean isLoaded;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        /**
-         *      scrollview de state i korumak için id tanımlamak gerekiyor.
-         *      android:id="@+id/scrollView"
-         *      appbar ın yok olması için nestedscrollview olmalı
-         */
 
-        if (view == null)
+        if (isLoaded == false) {
             view = inflater.inflate(R.layout.fragment_scroll, container, false);
-
+            isLoaded = true;
+        }
 
         return view;
     }
