@@ -12,20 +12,18 @@ import android.view.ViewGroup;
 /**
  * Created by gurkan on 2.12.2015.
  */
-public class Fragment2 extends Fragment {
+public class FragmentRecyclerView extends Fragment {
 
 
-    private String[] items = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
+    private String[] listItems = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
 
-    private Adapter mAdapter;
+    private ListAdapter mAdapter;
     private View view ;
     private boolean isLoaded;
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (isLoaded == false) {
             view = inflater.inflate(R.layout.fragment2, container, false);
@@ -37,16 +35,16 @@ public class Fragment2 extends Fragment {
     }
 
     private void init(View view) {
-        RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.listRv);
 
-        mAdapter = new Adapter();
+        mAdapter = new ListAdapter();
+
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-        mAdapter.addAll(items);
+        mAdapter.addAll(listItems);
     }
 
 

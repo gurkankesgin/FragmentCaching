@@ -16,12 +16,12 @@ android:layout_height="match_parent">
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="1"
+            android:text="scrollview"
             />
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="2"
+            android:text="recyclerview"
             />
 
 
@@ -35,7 +35,7 @@ android:layout_height="match_parent">
     <FrameLayout
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:id="@+id/fragments"
+        android:id="@+id/fragmentsFl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

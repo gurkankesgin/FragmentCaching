@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 /**
  * Created by gurkan on 2.12.2015.
  */
-public class Fragment1 extends Fragment {
+public class FragmentScrollView extends Fragment {
 
     private View view;
 

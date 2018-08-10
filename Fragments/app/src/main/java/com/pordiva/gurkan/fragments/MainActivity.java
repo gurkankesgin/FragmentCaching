@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addOrReplaceFragment(new Fragment1());
+        addOrReplaceFragment(new FragmentScrollView());
 
 
         ((TabLayout) findViewById(R.id.tabs)).setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
                 int position = tab.getPosition();
 
                 if (position == 0) {
-                    addOrReplaceFragment(new Fragment1());
+                    addOrReplaceFragment(new FragmentScrollView());
                 }
                 if (position == 1) {
-                    addOrReplaceFragment(new Fragment2());
+                    addOrReplaceFragment(new FragmentRecyclerView());
                 }
 
             }
@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (newFragment == null) {
 
-            transaction.replace(R.id.fragments, currentFragment, currentFragment.getClass().getName());
+            transaction.replace(R.id.fragmentsFl, currentFragment, currentFragment.getClass().getName());
         } else {
-            transaction.replace(R.id.fragments, newFragment);
+            transaction.replace(R.id.fragmentsFl, newFragment);
         }
 
         transaction.addToBackStack(null);
