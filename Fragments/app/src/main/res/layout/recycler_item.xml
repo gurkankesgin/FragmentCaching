@@ -8,13 +8,12 @@
 
 
             <TextView
-
-                android:textSize="64dp"
+                android:textSize="50dp"
                 android:id="@+id/titleTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_margin="16dp"
+                android:layout_margin="32dp"
                 tools:text="snm"
                 />
 
