@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 
+import com.pordiva.gurkan.fragments.fragments.FragmentRecyclerView;
+import com.pordiva.gurkan.fragments.fragments.FragmentScrollView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

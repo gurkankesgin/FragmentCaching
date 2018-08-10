@@ -1,14 +1,18 @@
-package com.pordiva.gurkan.fragments;
+package com.pordiva.gurkan.fragments.adapter;
 
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.pordiva.gurkan.fragments.R;
 
 /**
  * Created by gurkan on 6.1.2016.
  */
-public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
 
 
     private String[] listItems;
@@ -35,6 +39,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
             return listItems.length;
         else
             return 0;
+
+    }
+
+    class ListViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView textView;
+
+
+        public ListViewHolder(View itemView) {
+            super(itemView);
+            textView = (TextView) itemView.findViewById(R.id.titleTv);
+        }
+
 
     }
 }

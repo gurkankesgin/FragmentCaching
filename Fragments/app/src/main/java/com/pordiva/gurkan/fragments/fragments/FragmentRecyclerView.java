@@ -1,4 +1,4 @@
-package com.pordiva.gurkan.fragments;
+package com.pordiva.gurkan.fragments.fragments;
 
 
 import android.app.Fragment;
@@ -8,6 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.pordiva.gurkan.fragments.adapter.ListAdapter;
+import com.pordiva.gurkan.fragments.R;
 
 /**
  * Created by gurkan on 2.12.2015.
@@ -26,7 +29,7 @@ public class FragmentRecyclerView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (isLoaded == false) {
-            view = inflater.inflate(R.layout.fragment2, container, false);
+            view = inflater.inflate(R.layout.fragment_recycler, container, false);
             init(view);
             isLoaded = true;
         }
