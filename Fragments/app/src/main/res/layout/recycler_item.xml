@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -7,14 +8,14 @@
 
 
             <TextView
-                android:background="@color/colorAccent"
+
                 android:textSize="64dp"
-                android:id="@+id/text3"
+                android:id="@+id/titleTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_margin="16dp"
-                android:text="sdf"
+                tools:text="snm"
                 />
 
 
