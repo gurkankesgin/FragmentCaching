@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_scroll"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:title="ScrollView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_recycler"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:title="RecyclerView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_webview"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:title="WebView"
+        app:showAsAction="ifRoom" />
+</menu>

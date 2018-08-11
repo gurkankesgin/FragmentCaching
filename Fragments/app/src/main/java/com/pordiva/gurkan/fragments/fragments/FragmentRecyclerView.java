@@ -9,18 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.pordiva.gurkan.fragments.adapter.ListAdapter;
+import com.pordiva.gurkan.fragments.adapter.ItemAdapter;
 import com.pordiva.gurkan.fragments.R;
 
-/**
- * Created by gurkan on 2.12.2015.
- */
 public class FragmentRecyclerView extends Fragment {
 
 
-    private String[] listItems = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
+    private String[] listItems = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s"};
 
-    private ListAdapter mAdapter;
+    private ItemAdapter mAdapter;
     private View view ;
     private boolean isLoaded;
 
@@ -41,7 +38,7 @@ public class FragmentRecyclerView extends Fragment {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.listRv);
 
-        mAdapter = new ListAdapter();
+        mAdapter = new ItemAdapter();
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);

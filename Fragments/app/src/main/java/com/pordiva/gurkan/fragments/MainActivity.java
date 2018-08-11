@@ -4,11 +4,14 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
 import com.pordiva.gurkan.fragments.fragments.FragmentRecyclerView;
 import com.pordiva.gurkan.fragments.fragments.FragmentScrollView;
+import com.pordiva.gurkan.fragments.fragments.FragmentWebView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,31 +22,24 @@ public class MainActivity extends AppCompatActivity {
 
         addOrReplaceFragment(new FragmentScrollView());
 
-
-        ((TabLayout) findViewById(R.id.tabs)).setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition();
-
-                if (position == 0) {
-                    addOrReplaceFragment(new FragmentScrollView());
-                }
-                if (position == 1) {
-                    addOrReplaceFragment(new FragmentRecyclerView());
-                }
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+        ((BottomNavigationView) findViewById(R.id.main_bnw)).setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_scroll:
+                                addOrReplaceFragment(new FragmentScrollView());
+                                break;
+                            case R.id.action_recycler:
+                                addOrReplaceFragment(new FragmentRecyclerView());
+                                break;
+                            case R.id.action_webview:
+                                addOrReplaceFragment(new FragmentWebView());
+                                break;
+                        }
+                        return true;
+                    }
+                });
 
     }
 
@@ -56,15 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (newFragment == null) {
 
-            transaction.replace(R.id.fragmentsFl, currentFragment, currentFragment.getClass().getName());
+            transaction.replace(R.id.main_fl, currentFragment, currentFragment.getClass().getName());
         } else {
-            transaction.replace(R.id.fragmentsFl, newFragment);
+            transaction.replace(R.id.main_fl, newFragment);
         }
 
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
 
 
 }

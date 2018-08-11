@@ -9,21 +9,18 @@ import android.widget.TextView;
 
 import com.pordiva.gurkan.fragments.R;
 
-/**
- * Created by gurkan on 6.1.2016.
- */
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
 
 
     private String[] listItems;
 
     @Override
-    public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ListViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false));
+    public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(ListViewHolder holder, int position) {
+    public void onBindViewHolder(ItemViewHolder holder, int position) {
         holder.textView.setText(listItems[position]);
     }
 
@@ -42,12 +39,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    class ItemViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textView;
 
 
-        public ListViewHolder(View itemView) {
+        public ItemViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.titleTv);
         }

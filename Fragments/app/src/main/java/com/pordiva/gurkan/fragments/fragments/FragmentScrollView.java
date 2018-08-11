@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 
 import com.pordiva.gurkan.fragments.R;
 
-/**
- * Created by gurkan on 2.12.2015.
- */
+
 public class FragmentScrollView extends Fragment {
 
     private View view;
