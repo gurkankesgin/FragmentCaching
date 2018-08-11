@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         addOrReplaceFragment(new FragmentScrollView());
+        setClick();
+    }
 
+    private void setClick() {
         ((BottomNavigationView) findViewById(R.id.main_bnw)).setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -40,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-
     }
 
     private void addOrReplaceFragment(Fragment currentFragment) {
@@ -51,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (newFragment == null) {
-
             transaction.replace(R.id.main_fl, currentFragment, currentFragment.getClass().getName());
         } else {
             transaction.replace(R.id.main_fl, newFragment);

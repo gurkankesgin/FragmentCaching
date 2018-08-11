@@ -15,7 +15,8 @@ import com.pordiva.gurkan.fragments.R;
 public class FragmentRecyclerView extends Fragment {
 
 
-    private String[] listItems = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s"};
+    private String[] listItems = {"Real Madrid", "Barcelona", "Inter", "Juventus", "Bayern Munich",
+            "Fenerbahçe", "Milan", "Chelsea", "Manchester United", "Paris Saint Germen", "Atletico Madrid"};
 
     private ItemAdapter mAdapter;
     private View view ;
