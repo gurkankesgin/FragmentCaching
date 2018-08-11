@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addOrReplaceFragment(new FragmentScrollView());
+        replaceFragment(new FragmentScrollView());
         setClick();
     }
 
@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.action_scroll:
-                                addOrReplaceFragment(new FragmentScrollView());
+                                replaceFragment(new FragmentScrollView());
                                 break;
                             case R.id.action_recycler:
-                                addOrReplaceFragment(new FragmentRecyclerView());
+                                replaceFragment(new FragmentRecyclerView());
                                 break;
                             case R.id.action_webview:
-                                addOrReplaceFragment(new FragmentWebView());
+                                replaceFragment(new FragmentWebView());
                                 break;
                         }
                         return true;
@@ -45,17 +45,22 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void addOrReplaceFragment(Fragment currentFragment) {
+    private void replaceFragment(Fragment newFragment) {
 
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        Fragment newFragment = manager.findFragmentByTag(currentFragment.getClass().getName());
+        Fragment fragmentStack = manager.findFragmentByTag(newFragment.getClass().getName());
 
 
-        if (newFragment == null) {
-            transaction.replace(R.id.main_fl, currentFragment, currentFragment.getClass().getName());
+        /**
+         *      ikisinde replace olmasının amacı ilk tıklandıklarında hepsi add methodunu çağırır
+         *      dolasıyla hiçbiri stop
+         */
+
+        if (fragmentStack == null) {
+            transaction.replace(R.id.main_fl, newFragment, newFragment.getClass().getName());
         } else {
-            transaction.replace(R.id.main_fl, newFragment);
+            transaction.replace(R.id.main_fl, fragmentStack);
         }
 
         transaction.addToBackStack(null);

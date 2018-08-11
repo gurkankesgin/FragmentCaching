@@ -11,36 +11,42 @@
         android:orientation="vertical">
 
         <ImageView
+            android:background="#000"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
             android:src="@drawable/user1" />
 
         <ImageView
+            android:background="#0d0"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
             android:src="@drawable/user2" />
 
         <ImageView
+            android:background="#dd0"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
             android:src="@drawable/user3" />
 
         <ImageView
+            android:background="#0dd"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
             android:src="@drawable/user4" />
 
         <ImageView
+            android:background="#fad"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
             android:src="@drawable/user5" />
 
         <ImageView
+            android:background="#20d"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
@@ -48,6 +54,7 @@
 
 
         <ImageView
+            android:background="#2a0"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
@@ -55,6 +62,7 @@
 
 
         <ImageView
+            android:background="#a00"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
@@ -62,6 +70,7 @@
 
 
         <ImageView
+            android:background="#ccc"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
@@ -69,6 +78,7 @@
 
 
         <ImageView
+            android:background="#eee"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="32dp"
