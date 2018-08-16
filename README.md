@@ -1,4 +1,6 @@
 # FragmentCaching
 
 
-![](https://im2.ezgif.com/tmp/ezgif-2-e816851924.gif)
+![](https://cdn-images-1.medium.com/max/800/1*ILYfdD6EaGhVzen9ncv3Fw.gif)
+
+https://medium.com/@grkankesgin/android-fragment-caching-d98d1ac9b873
